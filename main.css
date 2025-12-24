@@ -1,0 +1,205 @@
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: 'Kalam', cursive;
+background: linear-gradient(to bottom, #6FA8DC, #87CEEB, #B8E6FF);
+min-height: 100vh;
+overflow-x: hidden;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.landing-container {
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+padding: 20px;
+}
+
+.welcome-card {
+background: rgba(255, 255, 255, 0.15);
+backdrop-filter: blur(15px);
+border: 3px solid rgba(255, 255, 255, 0.4);
+border-radius: 10px;
+padding: 80px 100px;
+text-align: center;
+transform: perspective(1000px) rotateX(3deg);
+box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+transition: all 0.4s ease;
+position: relative;
+overflow: hidden;
+}
+
+.welcome-card::before {
+content: '';
+position: absolute;
+top: -50%;
+left: -50%;
+width: 200%;
+height: 200%;
+background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+transform: rotate(45deg);
+animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+0% { transform: translateX(-100%) translateY(-100%) rotate(45deg);
+}
+50% { transform: translateX(100%) translateY(100%) rotate(45deg);
+}
+100% { transform: translateX(-100%) translateY(-100%) rotate(45deg);
+}
+}
+
+.welcome-card:hover {
+transform: perspective(1000px) rotateX(0deg) scale(1.05);
+box-shadow: 0 35px 70px rgba(0, 0, 0, 0.2);
+border-color: rgba(255, 255, 255, 0.6);
+}
+
+.welcome-text {
+font-size: 4rem;
+color: white;
+font-weight: 400;
+margin-bottom: 30px;
+text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+position: relative;
+z-index: 2;
+letter-spacing: 2px;
+}
+
+.arrow-down {
+font-size: 2.5rem;
+color: white;
+margin: 30px 0;
+animation: bounce 2s infinite;
+position: relative;
+z-index: 2;
+}
+
+@keyframes bounce {
+0%, 20%, 50%, 80%, 100% {
+transform: translateY(0);
+}
+40% {
+transform: translateY(-15px);
+}
+60% {
+transform: translateY(-8px);
+}
+}
+
+.click-button {
+background: linear-gradient(45deg, #4ECDC4, #44A08D);
+border: none;
+border-radius: 10px;
+color: white;
+font-size: 1.8rem;
+font-weight: 400;
+padding: 20px 35px;
+cursor: pointer;
+transition: all 0.4s ease;
+font-family: 'Kalam', cursive;
+box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+position: relative;
+z-index: 2;
+letter-spacing: 1px;
+text-transform: lowercase;
+}
+
+.click-button:hover {
+transform: translateY(-5px);
+box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+background: linear-gradient(45deg, #44A08D, #4ECDC4);
+}
+
+.click-button:active {
+transform: translateY(-2px);
+box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Floating elements */
+.floating-element {
+position: absolute;
+color: rgba(255, 255, 255, 0.3);
+font-size: 40px;
+animation: float 4s ease-in-out infinite;
+}
+
+.floating-element:nth-child(1) {
+top: 10%;
+left: 10%;
+animation-delay: 0s;
+}
+
+.floating-element:nth-child(2) {
+top: 20%;
+right: 15%;
+animation-delay: 1s;
+}
+
+.floating-element:nth-child(3) {
+bottom: 15%;
+left: 20%;
+animation-delay: 2s;
+}
+
+.floating-element:nth-child(4) {
+bottom: 25%;
+right: 10%;
+animation-delay: 3s;
+}
+
+@keyframes float {
+0%, 100% {
+transform: translateY(0px) rotate(0deg);
+opacity: 0.3;
+}
+50% {
+transform: translateY(-20px) rotate(10deg);
+opacity: 0.6;
+}
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+.welcome-text {
+font-size: 2.5rem;
+}
+
+.welcome-card {
+padding: 50px 60px;
+border-radius: 40px;
+}
+
+.click-button {
+font-size: 1.5rem;
+padding: 15px 35px;
+}
+
+.arrow-down {
+font-size: 2rem;
+}
+}
+
+@media (max-width: 480px) {
+.welcome-text {
+font-size: 2rem;
+}
+
+.welcome-card {
+padding: 40px 50px;
+border-radius: 30px;
+}
+
+.click-button {
+font-size: 1.3rem;
+padding: 12px 30px;
+}
+}
