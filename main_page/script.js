@@ -340,8 +340,7 @@ function setupLetterVideoButton() {
     // event click: buka modal dan mainkan video
     btn.addEventListener('click', function (e) {
         e.preventDefault();
-        // path video (letakkan file di /media/happy-birthday-video.mp4)
-        const videoSrc = 'media/happy-birthday-video.mp4';
+        const videoSrc = 'https://files.catbox.moe/2c4weq.mp4';
         openVideoModalWithSrc(videoSrc);
     });
 }
