@@ -1,6 +1,6 @@
 // === NAVIGASI (GLOBAL) ===
 function enterSite() {
-  location.href = 'home/index.html';
+  location.href = 'loader/loading-page.html';
 }
 
 // === DOM ===
